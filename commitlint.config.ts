@@ -33,7 +33,7 @@ module.exports = {
     'body-max-line-length': [2, 'always', 100],
     'footer-leading-blank': [1, 'always'],
     'footer-max-line-length': [2, 'always', 100],
-    'references-empty': [1, 'never'],
+    'references-empty': [0, 'never'],
   },
   helpUrl:
     'https://github.com/conventional-changelog/commitlint/#what-is-commitlint',

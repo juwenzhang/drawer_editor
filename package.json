@@ -13,6 +13,7 @@
     "changeset": "changeset",
     "check-spell": "pnpm cspell && heading-case",
     "check:changeset": "node scripts/checkChangeset.mjs",
+    "commit": "node scripts/commit-helper.mjs",
     "commitlint": "commitlint --edit",
     "dev:docs": "rspress dev",
     "format": "prettier . --write && biome check --write && heading-case --write",
