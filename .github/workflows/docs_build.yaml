@@ -47,7 +47,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: update pnpm-version
-        run: pnpm config set pnpm-version 10.20.0
+        run: pnpm install -g pnpm
       - name: Install dependencies
         run: pnpm install
       - name: Build with Rspress
