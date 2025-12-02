@@ -1,0 +1,19 @@
+# <类型>(<作用域>): <主题>
+
+# 主体（可选，详细描述修改内容）
+
+# 脚注（可选，关闭 issue 或 Breaking Changes）
+# Fixes #123
+# BREAKING CHANGE: 重大变更说明
+#
+# 类型必须是以下之一：
+#   feat:     新功能
+#   fix:      修复 bug
+#   docs:     文档更新
+#   style:    代码格式
+#   refactor: 重构
+#   perf:     性能优化
+#   test:     测试相关
+#   build:    构建系统
+#   ci:       CI配置
+#   chore:    其他杂项
