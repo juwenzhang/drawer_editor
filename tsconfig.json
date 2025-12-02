@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "baseUrl": "./",
+    "lib": ["DOM", "ESNext"],
+    "jsx": "react-jsx",
+    "target": "ESNext",
+    "skipLibCheck": true,
+    "useDefineForClassFields": true,
+
+    /* modules */
+    "module": "ESNext",
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+
+    /* type checking */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": [
+    "vitest.workspace.ts",
+    "playwright.config.ts",
+    "commitlint.config.ts"
+  ]
+}

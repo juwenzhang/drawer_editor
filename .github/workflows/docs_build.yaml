@@ -1,0 +1,70 @@
+name: Deploy Rspress site to Pages
+
+on:
+  # 触发时机是当 master 或 main 分支有新的 commit 时，或者当有 pull request 被打开或更新时
+  # 1. 当 push 到 master 或 main 分支时
+  # 2. 当 pull request 到 master 或 main 分支时
+  # 以及更新的 docs 目录下的文件和 .github/workflows/docs_deploy.yaml 文件时
+  push:
+    branches: [master, main]
+    paths:
+      - 'docs/**'
+      - '.github/workflows/docs_deploy.yaml'
+  pull_request:
+    branches: [master, main]
+    paths:
+      - 'docs/**'
+      - '.github/workflows/docs_deploy.yaml'
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Not needed if lastUpdated is not enabled
+      - uses: pnpm/action-setup@v3 # pnpm is optional but recommended, you can also use npm / yarn
+        with:
+          version: 8
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build with Rspress
+        run: |
+          pnpm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: doc_build
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

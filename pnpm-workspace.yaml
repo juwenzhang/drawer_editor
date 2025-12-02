@@ -1,0 +1,14 @@
+packages:
+  - 'web/**/*'
+  - 'service/**/*'
+  - 'packages/**/*'
+
+onlyBuiltDependencies:
+  - '@biomejs/biome'
+  - 'core-js'
+  - 'esbuild'
+  - 'nx'
+
+hoistPattern: []
+linkWorkspacePackages: true
+strictPeerDependencies: false
