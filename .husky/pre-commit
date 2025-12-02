@@ -1,2 +1,3 @@
 pnpm --no-install lint-staged
+pnpm run check-spell -- --quiet
 pnpm run log:commit

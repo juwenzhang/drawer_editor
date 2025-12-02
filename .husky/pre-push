@@ -1,1 +1,18 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "运行推送前检查..."
+
 pnpm run check:changeset
+
+if ! pnpm run lint; then
+  echo "代码检查未通过，请修复错误后再推送。"
+  exit 1
+fi
+
+if ! pnpm run test:unit; then
+  echo "单元测试失败，请修复后再推送。"
+  exit 1
+fi
+
+echo "所有检查通过，开始推送..."
