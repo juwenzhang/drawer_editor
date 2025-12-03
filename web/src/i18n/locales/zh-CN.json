@@ -1,0 +1,53 @@
+{
+  "common": {
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "edit": "编辑",
+    "preview": "预览",
+    "undo": "撤销",
+    "redo": "重做",
+    "copy": "复制",
+    "paste": "粘贴",
+    "cut": "剪切"
+  },
+  "editor": {
+    "title": "画板编辑器",
+    "elements": "元素库",
+    "canvas": "画布",
+    "control": "控制面板",
+    "worklet": "工作体",
+    "settings": "设置"
+  },
+  "elements": {
+    "text": "文本",
+    "button": "按钮",
+    "container": "容器",
+    "image": "图片",
+    "shape": "形状",
+    "icon": "图标",
+    "form": "表单",
+    "chart": "图表"
+  },
+  "tools": {
+    "select": "选择工具",
+    "drag": "拖拽工具",
+    "resize": "缩放工具",
+    "rotate": "旋转工具",
+    "align": "对齐工具",
+    "grid": "网格工具",
+    "ruler": "标尺工具"
+  },
+  "properties": {
+    "position": "位置",
+    "size": "尺寸",
+    "color": "颜色",
+    "font": "字体",
+    "border": "边框",
+    "shadow": "阴影",
+    "background": "背景",
+    "opacity": "透明度",
+    "rotation": "旋转",
+    "zIndex": "层级"
+  }
+}

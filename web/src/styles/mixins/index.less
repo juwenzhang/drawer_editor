@@ -1,0 +1,115 @@
+.clearfix() {
+  &::before,
+  &::after {
+    display: table;
+    content: '';
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+.text-ellipsis(@lines: 1) when (@lines = 1) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text-ellipsis(@lines) when (default()) {
+  display: -webkit-box;
+  -webkit-line-clamp: @lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-auto-fit(@min-width: 200px, @gap: var(--spacing-md)) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(@min-width, 1fr));
+  gap: @gap;
+}
+
+.box-shadow(@shadow) {
+  box-shadow: @shadow;
+}
+
+.inset-shadow(@color: rgba(0, 0, 0, 0.1)) {
+  box-shadow: inset 0 0 8px @color;
+}
+
+.transition-all(@duration: var(--animation-duration-base), @easing: var(--animation-ease-base)) {
+  transition: all @duration @easing;
+}
+
+.animation-spin() {
+  animation: spin 1s linear infinite;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.respond-to(@breakpoint, @rules) {
+  @media (min-width: @breakpoint) {
+    @rules();
+  }
+}
+
+.mobile(@rules) {
+  @media (max-width: 767px) {
+    @rules();
+  }
+}
+
+.tablet(@rules) {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @rules();
+  }
+}
+
+.desktop(@rules) {
+  @media (min-width: 1024px) {
+    @rules();
+  }
+}
+
+.worklet-text(@content: '', @color: var(--color-text), @font-size: var(--font-size-base)) {
+  --text-content: @content;
+  --text-color: @color;
+  --font-size: @font-size;
+  background-image: paint(textRenderer);
+}
+
+.worklet-canvas(@type: 'gradient', @data: '{}') {
+  --canvas-type: @type;
+  --canvas-data: @data;
+  background-image: paint(canvasEngine);
+}
+
+.dark-mode(@rules) {
+  [data-theme='dark'] & {
+    @rules();
+  }
+}

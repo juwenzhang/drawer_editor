@@ -1,0 +1,53 @@
+{
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "preview": "Preview",
+    "undo": "Undo",
+    "redo": "Redo",
+    "copy": "Copy",
+    "paste": "Paste",
+    "cut": "Cut"
+  },
+  "editor": {
+    "title": "Drawer Editor",
+    "elements": "Elements",
+    "canvas": "Canvas",
+    "control": "Control",
+    "worklet": "Worklet",
+    "settings": "Settings"
+  },
+  "elements": {
+    "text": "Text",
+    "button": "Button",
+    "container": "Container",
+    "image": "Image",
+    "shape": "Shape",
+    "icon": "Icon",
+    "form": "Form",
+    "chart": "Chart"
+  },
+  "tools": {
+    "select": "Select Tool",
+    "drag": "Drag Tool",
+    "resize": "Resize Tool",
+    "rotate": "Rotate Tool",
+    "align": "Align Tool",
+    "grid": "Grid Tool",
+    "ruler": "Ruler Tool"
+  },
+  "properties": {
+    "position": "Position",
+    "size": "Size",
+    "color": "Color",
+    "font": "Font",
+    "border": "Border",
+    "shadow": "Shadow",
+    "background": "Background",
+    "opacity": "Opacity",
+    "rotation": "Rotation",
+    "zIndex": "Z-Index"
+  }
+}
