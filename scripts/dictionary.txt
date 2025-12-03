@@ -173,3 +173,9 @@ weibo
 weixin
 zeabur
 zhihu
+worklets
+panal
+languagedetector
+RRGGBB
+worklet
+esmodule
